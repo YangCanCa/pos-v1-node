@@ -1,11 +1,12 @@
-const main = require('../main/main');
+
+const  printInventory = require('../main/main.js');
 
 describe('pos', function () {
-    var allItems;
+   
     var inputs;
 
     beforeEach(function () {
-        allItems = loadAllItems();
+       
         inputs = [
             'ITEM000001',
             'ITEM000001',
@@ -21,7 +22,7 @@ describe('pos', function () {
 
     it('should print correct text', function () {
 
-        spyOn(console, 'log');
+    
 
         printInventory(inputs);
 
@@ -39,6 +40,6 @@ describe('pos', function () {
             '节省：7.50(元)\n' +
             '**********************';
 
-        expect(console.log).toHaveBeenCalledWith(expectText);
+        expect(console.log).toEqual(expectText);
     });
 });
